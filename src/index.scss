@@ -1,15 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,600');
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300');
-
-$primary-green: rgb(0, 101, 107);
-$primary-slime: rgb(213, 215, 23);
-$primary-coral: rgb(255, 111, 97);
-$primary-purple: rgb(125, 93, 153);
-$primary-blue: rgb(0, 132, 161);
-$primary-white: rgb(255, 255, 255);
-$primary-black: rgb(51, 51, 51);
-
+@import './assets/scss/colors.scss';
 
 html {
     margin: 0;
@@ -31,6 +23,6 @@ p {
     font-family: 'Quicksand', sans-serif;
 }
 
-p, h1, h2, h3, div {
+p, h1, h2, h3 {
     color: $primary-black;
 }

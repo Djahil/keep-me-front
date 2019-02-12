@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Card } from 'react-bootstrap';
+import logo from '../../../assets/img/keep-me-logo-coral.svg'
+import './AdvantageCard.scss';
 
 class AdvantageCard extends Component {
+
     render() {
         return (
             <Card>
-                <Card.Img variant="top" src="keep-me-logo-coral.png" />
+                <Card.Img variant="top" src={logo} className="img-card" />
                 <Card.Body>
                     <Card.Title>Card Title</Card.Title>
                     <Card.Text>

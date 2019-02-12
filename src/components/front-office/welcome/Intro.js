@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Jumbotron, Button, Container } from 'react-bootstrap';
-// import { Button } from 'react-bootstrap';
 
 import './Intro.scss';
 

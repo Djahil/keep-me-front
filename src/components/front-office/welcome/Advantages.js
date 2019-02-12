@@ -1,14 +1,18 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import AdvantageCard from './AdvantageCard';
+import { Container, Row } from 'react-bootstrap'
+import './Advantages.scss';
 
 class Advantages extends Component {
     render() {
         return(
-            <Fragment>
-                <AdvantageCard />
-                <AdvantageCard />
-                <AdvantageCard />
-            </Fragment>
+            <Container>
+                <Row  id="card-container-inner">
+                        <AdvantageCard />
+                        <AdvantageCard />
+                        <AdvantageCard />
+                </Row>
+            </Container>
         );
     }
 }
