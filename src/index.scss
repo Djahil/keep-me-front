@@ -1,4 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300');
 
 $primary-green: rgb(0, 101, 107);
 $primary-slime: rgb(213, 215, 23);
@@ -17,5 +19,18 @@ html {
 #root {
     margin: 0;
     padding: 0;
+}
 
+h1, .card-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+p {
+    font-family: 'Quicksand', sans-serif;
+}
+
+p, h1, h2, h3, div {
+    color: $primary-black;
 }

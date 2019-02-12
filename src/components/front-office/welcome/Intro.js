@@ -10,9 +10,9 @@ class Intro extends Component {
         <Jumbotron fluid 
                    id="intro">
             <Container>
-                <p>
+                <h1>
                     Achetez votre super carte aujourd'hui et bénéficiez de 30% de réduction !
-                </p>
+                </h1>
                 <Button>
                     Commander
                 </Button>

@@ -4,16 +4,16 @@
     background-color:$primary-coral;
 }
 
-p {
+h1 {
     color: $primary-white;
 }
 
 .btn-primary {
-    background-color: $primary-green;
+    background-color: $primary-purple;
     border: 0;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .btn-primary:hover {
     background-color: $primary-blue;
-    border: 0;
 }
