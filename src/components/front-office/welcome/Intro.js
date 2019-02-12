@@ -19,6 +19,6 @@ class Intro extends Component {
         </Jumbotron>    
       );
     }
-  }
-  
-  export default Intro;
+}
+
+export default Intro;
