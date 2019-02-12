@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react'; 
 import Intro from './Intro';
 
+
 class WelcomePage extends Component {
-  render() {
-    return (
-      <Intro />
-    );
+    render() {
+      return(
+        <Intro/>
+    )
   }
 }
 
