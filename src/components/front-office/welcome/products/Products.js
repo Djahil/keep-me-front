@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ProductCard from './ProductCard';
 import products from '../../../../assets/data/products.js'
 
@@ -7,9 +7,9 @@ const productsList = products.map( product => (
 ));
 
 const Products = () =>(
-        <>
+        <Fragment>
             {productsList}
-        </>
+        </Fragment>
 );
 
 export default Products;

@@ -1,0 +1,22 @@
+@import '../../../../assets/scss/colors.scss';
+
+#nav {
+    padding: 10px 20px;
+}
+
+.head-nav-link {
+    font-family: 'Nunito', sans-serif;
+    color: $primary-purple !important;
+    font-weight: 600; 
+}
+
+.head-nav-link:hover{
+    color: $primary-coral !important;
+}
+
+button {
+    border-color: $secondary-purple  !important;
+}
+button > span {
+    background-image: url(../../../../assets/img/icons/header/icon-dropdown.svg) !important;
+}
