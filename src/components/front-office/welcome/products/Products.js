@@ -1,16 +1,15 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import products from '../../../../assets/data/products.js'
 
-import image from '../../../../assets/img/pictures/cardsAmbiance.png';
+const productsList = products.map( product => (
+    <ProductCard key={product.id} image={product.image} title={product.title} text={product.text} />
+));
 
-const products = {
-        image: image,
-        title: 'Lorem ipsum dolor sit amet',
-        text: 'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad'
-}
-
-const Products = () => (
-        <ProductCard image={products.image} title={products.title} text={products.text} />
+const Products = () =>(
+        <>
+            {productsList}
+        </>
 );
 
 export default Products;
