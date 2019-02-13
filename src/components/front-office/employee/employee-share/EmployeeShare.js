@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class EmployeeShare extends Component {
-    render() {
-        return (
-            <div>
-                <h1>EMPLOYEE-SHARE</h1>
-            </div>
-        );
-    }
-}
+const EmployeeShare = () => (
+    <div>
+        <h1>EMPLOYEE-SHARE</h1>
+    </div>
+);
 
 export default EmployeeShare;

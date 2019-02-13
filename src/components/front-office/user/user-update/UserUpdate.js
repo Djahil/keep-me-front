@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class UserUpdate extends Component {
-    render() {
-        return (
-            <div>
-                <h1>USER-UPDATE</h1>
-            </div>
-        );
-    }
-}
+const UserUpdate = () => (
+    <div>
+        <h1>USER-UPDATE</h1>
+    </div>
+);
 
 export default UserUpdate;
