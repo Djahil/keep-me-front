@@ -1,40 +1,42 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AdvantageCard from './AdvantageCard';
 import { Container, Row } from 'react-bootstrap'
 import './Advantages.scss';
 
-import icon from '../../../../assets/img/keep-me-logo-coral.svg'
+import chronoIcon from '../../../../assets/img/icons/welcome/icon-chrono.svg';
+import qualityIcon from '../../../../assets/img/icons/welcome/icon-quality.svg';
+import visitCardIcon from '../../../../assets/img/icons/welcome/icon-visit-card.svg';
 
-const cards = {
-    card1: {
-        icon: icon,
-        title: 'Lorem ipsum dolor sit amet',
-        text: 'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad'
-    },
-    card2: {
-        icon: icon,
-        title: 'Lorem ipsum dolor sit amet',
-        text: 'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad'
-    },
-    card3: {
-        icon: icon,
-        title: 'Lorem ipsum dolor sit amet',
-        text: 'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad'
-    }
+const Advantages = () => {
+    
+    const cards = [
+        {
+            icon: chronoIcon,
+            title: 'Résultat immédiat',
+            text: 'Paramétrez vos carte de visites et partagez les sans perdre un instant.'
+        },
+        {
+            icon: qualityIcon,
+            title: 'L\'engagement Keep Me',
+            text: 'Nous remuons ciel et terre pour que vous soyez satisfaits !'
+        },
+        {
+            icon: visitCardIcon,
+            title: 'Faites nous confiance',
+            text: 'Nous veillons à vous satisfaire et à créer une relation de confiance pour travailler avec vous sur le long terme.'
+        }
+    ]
+
+    const cardsList = cards.map((card) => {
+        return( <AdvantageCard icon={card.icon} title={card.title} text={card.text} />)
+    })
+
+    return (
+        <Container>
+            <Row  id="card-container-inner">
+                {cardsList}
+            </Row>
+        </Container>
+    );
 }
-
-class Advantages extends Component {
-    render() {
-        return(
-            <Container>
-                <Row  id="card-container-inner">
-                    <AdvantageCard icon={cards.card1.icon} title={cards.card1.title} text={cards.card1.text} />
-                    <AdvantageCard icon={cards.card2.icon} title={cards.card2.title} text={cards.card2.text} />
-                    <AdvantageCard icon={cards.card3.icon} title={cards.card3.title} text={cards.card3.text} />
-                </Row>
-            </Container>
-        );
-    }
-}
-
 export default Advantages;
