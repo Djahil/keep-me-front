@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
-import Intro from './Intro';
-import Advantages from './Advantages';
-
+import Intro from './intro/Intro';
+import Advantages from './advantages/Advantages';
+import Products from './products/Products'
+import Presentation from './presentation/Presentation'
 
 class WelcomePage extends Component {
   render() {
@@ -9,6 +10,8 @@ class WelcomePage extends Component {
     <Fragment>
         <Intro />
         <Advantages />
+        <Products />
+        <Presentation />
     </Fragment>
     );
   }

@@ -1,0 +1,24 @@
+@import '../../../../assets/scss/colors.scss';
+
+.product-card{
+    margin-top: 20px;
+    margin-bottom: 20px;    
+    border: none;
+    border-radius: 0;
+    text-align: center;
+    color: $primary-black;
+}
+
+.product-card-img {
+    opacity: 0.3;
+}
+
+p {
+    color: $primary-black;
+}
+
+.text-center {
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+}

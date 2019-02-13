@@ -16,7 +16,7 @@ class Intro extends Component {
                     Commander
                 </Button>
             </Container>
-        </Jumbotron>    
+        </Jumbotron>
       );
     }
 }
