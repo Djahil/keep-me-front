@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import logo from '../../../../assets/img/keep-me-logo-coral.svg';
+import logo from '../../../../assets/img/logo/keep-me-logo-coral.svg';
 import './Header.scss'
 
 const Header = () => (   
@@ -20,7 +20,7 @@ const Header = () => (
             <Nav className="mr-auto"></Nav>
             <Nav>
                 <Nav.Link className="head-nav-link" href="/contact">Contact</Nav.Link>
-                <Nav.Link className="head-nav-link" href="/login">Se connecter</Nav.Link>
+                <Nav.Link className="head-nav-link" href="/login">Connexion</Nav.Link>
             </Nav>
         </Navbar.Collapse>
     </Navbar>

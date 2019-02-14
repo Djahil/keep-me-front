@@ -8,6 +8,8 @@ import Presentation from './presentation/Presentation'
 // TEST //
 //////////
 import Header from '../layouts/header/Header'
+import Footer from '../layouts/footer/Footer'
+
 const WelcomePage = () => (
     <Fragment>
         <Header />
@@ -15,6 +17,7 @@ const WelcomePage = () => (
         <Advantages />
         <Products />
         <Presentation />
+        <Footer />
     </Fragment>
 );
 
