@@ -1,10 +1,20 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import SocialIcon from './SocialIcon';
+
 import './Footer.scss';
 
+import social from '../../../../assets/data/socialMedias';
 import logo from '../../../../assets/img/logo/keep-me-logo-white.svg'
-import instaLogo from '../../../../assets/img/logo/Instagram_simple_icon.svg';
-import twtrLogo from '../../../../assets/img/logo/Twitter_Bird.svg';
+
+const socialList = social.map(social => {
+    return (
+        <SocialIcon key={social.id}
+                    icon={social.logo}
+                    url={social.url}
+                    altText={social.alt}/>
+    )
+})
 
 const Footer = () => (
     <Container fluid id="footer">
@@ -17,16 +27,7 @@ const Footer = () => (
             <Col className="content">
                 <Container>
                     <Row>
-                        <Col className="content">
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                                <img className="social-logo" src={instaLogo} alt="logo Keep Me white" />
-                            </a>          
-                        </Col>
-                        <Col className="content">
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                                <img className="social-logo" src={twtrLogo} alt="logo Keep Me white" />
-                            </a>
-                        </Col>
+                        {socialList}
                     </Row>
                 </Container>
             </Col>
