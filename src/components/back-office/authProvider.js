@@ -6,7 +6,7 @@ import {
 } from 'react-admin';
 
 // Change this to be your own login check route.
-const login_uri = 'http://localhost:8000/api/login_check';
+const login_uri = process.env.REACT_APP_API_URL_CHECK;
 
 export default (type, params) => {
   switch (type) {

@@ -21,7 +21,7 @@ const theme = createMuiTheme({
     },
 });
 
-const entrypoint = 'http://localhost:8000/api';
+const entrypoint = process.env.REACT_APP_API_URL;
 const fetchHeaders = {'Authorization': `Bearer ${window.localStorage.getItem('token')}`};
 const fetchHydra = (url, options = {}) => baseFetchHydra(url, {
     ...options,
