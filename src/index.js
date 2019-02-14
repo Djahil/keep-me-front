@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WelcomePage from './components/front-office/welcome/WelcomePage';
-import Admin from './components/back-office/Admin';
+import AdminController from './components/back-office/AdminController';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Switch } from 'react-router'; 
 import * as serviceWorker from './serviceWorker';
@@ -10,10 +10,9 @@ ReactDOM.render((
     <BrowserRouter>
         <Switch>
             <Route exact path = "/" component = {WelcomePage} />
-            <Route path="/Admin" component={Admin} />
+            <Route path="/Admin" component={AdminController} />
         </Switch>
     </BrowserRouter>
-    
  ), document.getElementById('root'))
 
 
