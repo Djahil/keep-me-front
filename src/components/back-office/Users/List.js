@@ -1,18 +1,32 @@
 import React from 'react';
-import { List, Datagrid, TextField, email, ShowButton, EditButton } from 'react-admin';
+import { List, Datagrid, TextField, ShowButton, EditButton, Filter, ReferenceInput, AutocompleteInput, SelectInput, TextInput } from 'react-admin';
 // import { CustomPagination } from '../Pagination/CustomPagination';
 
+const autocomplete = [
+    {
+        firstName: 'prenom',
+        lastName: 'nom'
+    }
+];
+
+const UserFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search" source="nom" alwaysOn />
+        <ReferenceInput label="User" source="id" reference="users" allowEmpty>
+            {/* <AutocompleteInput source="user" choices={autocomplete.firstName + autocomplete.lastName} /> */}
+            <SelectInput optionText="nom" />
+        </ReferenceInput>
+    </Filter>
+);
+
 export const UserList = (props) => (
-    <List {...props} title="Users">
+    <List {...props} title="Users" filters={ <UserFilter /> }>
         <Datagrid>
-            <TextField source="email" label="Email" validate={ email() } />
-            <TextField  source="nom" label="Lastname"/>
-            <TextField  source="prenom" label="Firstname"/>
-            <TextField  source="nom_entreprise" label="Nom Entreprise"/>
-            <TextField  source="adresse" label="Adresse"/>
-            <TextField  source="code_postal" label="Code Postal"/>
-            <TextField  source="site_web" label="Site Web"/>      
-            <TextField  source="social" label="Social"/>      
+            <TextField source="nom" label="Nom"/>
+            <TextField source="prenom" label="Prénom"/>
+            <TextField source="nomEntreprise" label="Nom Entreprise"/>
+            <TextField source="email" label="Email" /> 
+            <TextField source="siteWeb" label="Site Web" /> 
             <ShowButton />
             <EditButton />   
         </Datagrid>

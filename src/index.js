@@ -7,8 +7,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Switch } from 'react-router';
 import './index.scss';
 
-import WelcomePage from './components/front-office/welcome/WelcomePage';
-import Admin from './components/back-office/Admin'; 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render((

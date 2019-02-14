@@ -6,8 +6,8 @@ export const EmployeeEdit = (props) => (
         <SimpleForm>
             <TextInput source="nom" label="Nom"/>
             <TextInput source="prenom" label="Prénom"/>
-            <TextInput source="email" label="Email" validate={ email() } />
             <TextInput source="poste" label="Poste"/>
+            <TextInput source="email" label="Email" validate={ email() } />
             <TextInput source="telephone" label="Telephone"/>          
         </SimpleForm>
     </Edit>
