@@ -5,6 +5,7 @@
   "dependencies": {
     "@api-platform/admin": "^0.6.2",
     "bootstrap": "^4.2.1",
+    "include-media": "^1.4.9",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.1",
     "ra-data-json-server": "^2.7.1",
