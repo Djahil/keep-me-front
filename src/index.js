@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import WelcomePage from './components/front-office/welcome/WelcomePage';
+import AdminController from './components/back-office/AdminController';
+
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Switch } from 'react-router';
 import './index.scss';
@@ -13,7 +16,7 @@ ReactDOM.render((
     <BrowserRouter>
         <Switch>
             <Route exact path = "/" component = {WelcomePage} />
-            <Route path="/Admin" component={Admin} />
+            <Route path="/admin" component={AdminController} />
         </Switch>
     </BrowserRouter>
  ), document.getElementById('root'));
