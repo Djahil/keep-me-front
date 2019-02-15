@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Admin, Resource } from 'react-admin';
+import Loader from 'react-loader-spinner';
 import parseHydraDocumentation from '@api-platform/api-doc-parser/lib/hydra/parseHydraDocumentation';
 import { hydraClient, fetchHydra as baseFetchHydra  } from '@api-platform/admin';
 import authProvider from './authProvider';
@@ -62,7 +63,7 @@ export default class extends Component {
     }
 
     render() {
-        if (null === this.state.api) return <div>Loading...</div>;
+        if (null === this.state.api) return <Loader type="ThreeDots" color="rgb(255, 111, 07)" height={80} width={80} />;
         return (
             <Admin api={ this.state.api }
                    apiDocumentationParser={ apiDocumentationParser }
