@@ -7,14 +7,12 @@ import './Footer.scss';
 import social from '../../../../assets/data/socialMedias';
 import logo from '../../../../assets/img/logo/keep-me-logo-white.svg'
 
-const socialList = social.map(social => {
-    return (
-        <SocialIcon key={social.id}
-                    icon={social.logo}
-                    url={social.url}
-                    altText={social.alt}/>
-    )
-})
+const socialList = social.map(( { id, logo, url, alt } ) => (
+    <SocialIcon key={id}
+                icon={logo}
+                url={url}
+                altText={alt}/>
+));
 
 const Footer = () => (
     <Container fluid id="footer">
