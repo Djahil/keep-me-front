@@ -59,7 +59,7 @@ export default class extends Component {
         apiDocumentationParser(entrypoint).then(({ api }) => {
             this.setState({ api });
         }).catch((e) => {
-            console.log(e);
+            console.log("error :", e);
         });
     }
 

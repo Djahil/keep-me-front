@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32.904999mm"
+   height="29.348mm"
+   viewBox="0 0 32.904999 29.348"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="keep-me-logo-white.svg"
+   inkscape:export-filename="C:\Users\adminHOC\Julien\Projets\keep-me-front\src\assets\img\keep-me-logo-coral.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.6203867"
+     inkscape:cx="-26.953505"
+     inkscape:cy="20.297575"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-267.652)">
+    <path
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:0.00065788"
+       d="m 8.96169,267.65214 -8.96182,13.82701 7.49082,14.67389 16.452617,0.84683 8.96182,-13.82701 -7.490808,-14.67391 z m -0.0549,1.35718 15.301863,0.12477 7.545066,13.31673 -7.75675,13.19185 L 8.6951,295.51774 1.15002,282.20102 Z"
+       id="path4028-1-9-4-5-4"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.05089569px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.35127231;"
+       x="16.564783"
+       y="282.35007"
+       id="text2685-5-7-4-7-94-8-9-5-2-4-0-4-7-5"
+       transform="scale(0.999942,1.000058)"><tspan
+         sodipodi:role="line"
+         x="16.564783"
+         y="282.35007"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.25;font-family:'Juice ITC';-inkscape-font-specification:'Juice ITC';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.35127231;"
+         id="tspan2821-5-5-56-6-2-4-4-4-9-3-7-4">Keep</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.05089569px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.35127231;"
+       x="18.998537"
+       y="294.12149"
+       id="text2685-5-7-3-1-8-7-8-7-4-8-1-3-9-3-5"
+       transform="scale(0.999942,1.000058)"><tspan
+         sodipodi:role="line"
+         x="18.998537"
+         y="294.12149"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.25;font-family:'Juice ITC';-inkscape-font-specification:'Juice ITC';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.35127231;"
+         id="tspan2821-3-0-1-3-7-6-1-9-2-5-2-4-2">Me</tspan></text>
+  </g>
+</svg>
