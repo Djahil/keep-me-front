@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, TextField, email } from 'react-admin';
+import { List, Datagrid, TextField, email, ShowButton, EditButton } from 'react-admin';
 // import { CustomPagination } from '../Pagination/CustomPagination';
 
 export const EmployeeList = (props) => (
@@ -7,9 +7,11 @@ export const EmployeeList = (props) => (
         <Datagrid>
             <TextField source="nom" label="Nom"/>
             <TextField source="prenom" label="Prénom"/>
-            <TextField source="email" label="Email" validate={ email() } />
             <TextField source="poste" label="Poste"/>
-            <TextField source="telephone" label="Telephone"/>         
+            <TextField source="email" label="Email" validate={ email() } />            
+            <TextField source="telephone" label="Telephone"/>     
+            <ShowButton />
+            <EditButton />       
         </Datagrid>
     </List>
 );

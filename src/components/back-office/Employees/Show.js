@@ -1,14 +1,14 @@
 import React from 'react';
-import { Show, SimpleShowLayout, TextInput, email } from 'react-admin';
+import { Show, SimpleShowLayout, TextField, email } from 'react-admin';
 
 export const EmployeeShow = (props) => (
     <Show { ...props }>
         <SimpleShowLayout>
-            <TextInput source="nom" label="Nom"/>
-            <TextInput source="prenom" label="Prénom"/>
-            <TextInput source="email" label="Email" validate={ email() } />
-            <TextInput source="poste" label="Poste"/>
-            <TextInput source="telephone" label="Telephone"/>      
+            <TextField source="nom" label="Nom"/>
+            <TextField source="prenom" label="Prénom"/>
+            <TextField source="poste" label="Poste"/>
+            <TextField source="email" label="Email" validate={ email() } />
+            <TextField source="telephone" label="Telephone"/>      
         </SimpleShowLayout>
     </Show>
 );
