@@ -1,4 +1,5 @@
 import React from 'react';
+import './UserCreate.scss';
 
 const UserCreate = () => (
     <div>

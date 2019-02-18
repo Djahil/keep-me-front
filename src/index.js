@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import WelcomePage from './components/front-office/welcome/WelcomePage';
 import Admin from './components/back-office/Admin';
 import { BrowserRouter, Route } from 'react-router-dom';

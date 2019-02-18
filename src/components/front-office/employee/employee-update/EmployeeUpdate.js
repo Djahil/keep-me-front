@@ -1,4 +1,5 @@
 import React from 'react';
+import './EmployeeUpdate.scss';
 
 const EmployeeUpdate = () => (
     <div>

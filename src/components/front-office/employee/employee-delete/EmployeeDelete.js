@@ -1,4 +1,5 @@
 import React from 'react';
+import './EmployeeDelete.scss';
 
 const EmployeeDelete = () => (
     <div>
