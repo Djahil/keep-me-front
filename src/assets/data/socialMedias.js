@@ -28,6 +28,12 @@ const social = [
         url: "https://twitter.com",
         alt: "logo Twitter"
     },
+    {
+        id: 4,
+        logo: twitter,
+        url: "https://twitter.com",
+        alt: "logo Twitter"
+    },
     
 ]
 
