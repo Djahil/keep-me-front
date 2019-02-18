@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Admin, Resource } from 'react-admin';
-import Loader from 'react-loader-spinner';
 import parseHydraDocumentation from '@api-platform/api-doc-parser/lib/hydra/parseHydraDocumentation';
 import { hydraClient, fetchHydra as baseFetchHydra  } from '@api-platform/admin';
 import authProvider from './authProvider';
@@ -67,8 +66,7 @@ export default class extends Component {
     }
 
     render() {
-        if (null === this.state.api) return <Loader />;
-
+        if (null === this.state.api) return <Loader />;    
         return (
             <React.Fragment>
             <CssBaseline />
