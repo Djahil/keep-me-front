@@ -7,7 +7,7 @@ const advantagesCards = [
         id: 0,
         icon: chronoIcon,
         title: 'Résultat immédiat',
-        text: 'Paramétrez vos carte de visites et partagez les sans perdre un instant.'
+        text: 'Paramétrez vos cartes de visite et partagez les sans perdre un instant.'
     },
     {
         id: 1,

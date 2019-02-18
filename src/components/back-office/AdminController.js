@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Admin, Resource } from 'react-admin';
+import Loader from 'react-loader-spinner';
 import parseHydraDocumentation from '@api-platform/api-doc-parser/lib/hydra/parseHydraDocumentation';
 import { hydraClient, fetchHydra as baseFetchHydra  } from '@api-platform/admin';
 import authProvider from './authProvider';
@@ -15,6 +16,8 @@ import { EmployeeCreate } from './Employees/Create';
 import { EmployeeList } from './Employees/List';
 import UserIcon from '@material-ui/icons/Person';
 import EmployeeIcon from '@material-ui/icons/Contacts';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 
 
 const theme = createMuiTheme({
@@ -64,8 +67,11 @@ export default class extends Component {
     }
 
     render() {
-        if (null === this.state.api) return <div>Loading...</div>;
+        if (null === this.state.api) return <Loader />;
+
         return (
+            <React.Fragment>
+            <CssBaseline />
             <Admin api={ this.state.api }
                    apiDocumentationParser={ apiDocumentationParser }
                    dataProvider= { dataProvider(this.state.api) }
@@ -75,6 +81,7 @@ export default class extends Component {
                   <Resource name="users" list={ UserList } create={ UserCreate } show={ UserShow } edit={ UserEdit } title="Users" icon={UserIcon} />
                   <Resource name="employees" list={ EmployeeList } create={ EmployeeCreate } show={ EmployeeShow } edit={ EmployeeEdit } title="Employees" icon={EmployeeIcon}/> 
             </Admin>
+            </React.Fragment>     
         )
     }
 }
