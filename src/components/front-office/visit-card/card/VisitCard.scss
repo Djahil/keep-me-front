@@ -1,0 +1,45 @@
+@import '../../../../assets/scss/colors.scss';
+
+.visit-card {
+    width: 504px;
+    height:327px;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    border: 1px solid rgb(51, 51, 51);
+    box-shadow: 0 0 2em rgba(51, 51, 51, 0.2);
+}
+
+.vcard-content-right, .vcard-content-left {
+    height: 275px;
+}
+.vcard-content-left {
+    // background-color: lightgreen;
+    text-align: center;
+}
+
+// .vcard-content-right {
+//     background-color: lightgrey;
+//}
+
+.vcard-footer {
+    // background-color: lightblue;
+    height: 50px;
+}
+
+.user-important {
+    color: $primary-black;
+    font-size: 20px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+logo-corp {
+    height: 50%;
+}
+// .img {
+//     height: 100px; weight: 100px;
+//      backgroundolor: 'red'}

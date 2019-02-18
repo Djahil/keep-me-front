@@ -18,6 +18,7 @@
 button {
     border-color: $secondary-purple  !important;
 }
-button > span {
-    background-image: url(../../../../assets/img/icons/header/icon-dropdown.svg) !important;
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url(../../../../assets/img/icons/header/icon-dropdown.svg);
 }
