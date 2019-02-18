@@ -10,6 +10,10 @@ import { UserShow } from './Users/Show';
 import { UserEdit } from './Users/Edit';
 import { UserCreate } from './Users/Create';
 import { UserList } from './Users/List';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import  Loader  from './Loader/Loader';
+
+
 // import { EmployeeShow } from './Employees/Show';
 // import { EmployeeEdit } from './Employees/Edit';
 // import { EmployeeCreate } from './Employees/Create';
@@ -63,8 +67,11 @@ export default class extends Component {
     }
 
     render() {
-        if (null === this.state.api) return <Loader type="ThreeDots" color="rgb(255, 111, 07)" height={80} width={80} />;
+        if (null === this.state.api) return <Loader />;
+
         return (
+            <React.Fragment>
+            <CssBaseline />
             <Admin api={ this.state.api }
                    apiDocumentationParser={ apiDocumentationParser }
                    dataProvider= { dataProvider(this.state.api) }
@@ -74,6 +81,7 @@ export default class extends Component {
                   <Resource name="users" list={ UserList } create={ UserCreate } show={ UserShow } edit={ UserEdit } title="Users"/>
                   {/*          <Resource name="employees" list={ EmployeeList } create={ EmployeeCreate } show={ EmployeeShow } edit={ EmployeeEdit } title="Employees"/> */}
             </Admin>
+            </React.Fragment>     
         )
     }
 }
