@@ -13,11 +13,11 @@ import { EmployeeShow } from './Employees/Show';
 import { EmployeeEdit } from './Employees/Edit';
 import { EmployeeCreate } from './Employees/Create';
 import { EmployeeList } from './Employees/List';
+import Loader from './Loader/Loader';
 import UserIcon from '@material-ui/icons/Person';
 import EmployeeIcon from '@material-ui/icons/Contacts';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
-
+import './AdminController.scss';
 
 const theme = createMuiTheme({
     palette: {
