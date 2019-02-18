@@ -1,20 +1,15 @@
 import React, {Component} from 'react';
 import './User.scss';
 
-import mock from '../employee/employee-list/employees.mock'
-import EmployeeList from '../employee/employee-list/EmployeeList'
+import EmployeeHeader from "./employee-header/EmployeeHeader";
+import EmployeeList from "./employee-list/EmployeeList";
 
 class User extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = { employees: mock };
-    }
-
     render() {
         return (
-            <div>
-                <EmployeeList employees={this.state.employees}/>
+            <div className="container mt-4">
+                <EmployeeHeader />
+                <EmployeeList />
             </div>
         );
     }

@@ -11,12 +11,12 @@ import Login from "./components/front-office/login/Login";
 import Signin from "./components/front-office/sigin/Signin";
 
 import User from "./components/front-office/user/User";
-import UserUpdate from "./components/front-office/user/user-update/UserUpdate";
+import UserUpdate from "./components/front-office/user/user-update-page/UserUpdate";
 
-import EmployeeCreate from "./components/front-office/employee/employee-create/EmployeeCreate";
-import EmployeeUpdate from "./components/front-office/employee/employee-update/EmployeeUpdate";
-import EmployeeDelete from "./components/front-office/employee/employee-delete/EmployeeDelete";
+import EmployeeCreate from "./components/front-office/employee/employee-create-page/EmployeeCreate";
+import EmployeeUpdate from "./components/front-office/employee/employee-update-page/EmployeeUpdate";
 import EmployeeShare from "./components/front-office/employee/employee-share/EmployeeShare";
+
 import NotFound from "./components/front-office/not-found/NotFound";
 
 ReactDOM.render((
@@ -34,7 +34,6 @@ ReactDOM.render((
 
             <Route exact path="/user/create" component={EmployeeCreate} />
             <Route exact path="/user/update/:id" component={EmployeeUpdate} />
-            <Route exact path="/user/delete/:id" component={EmployeeDelete}/>
             <Route exact path="/user/share/:id" component={EmployeeShare} />
 
             <Route component={NotFound} />
