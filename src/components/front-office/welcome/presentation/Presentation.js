@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card } from 'react-bootstrap';
-import logo from '../../../../assets/img/keep-me-logo-coral.svg'
+import logo from '../../../../assets/img/logo/keep-me-logo-coral.svg'
 
 import './Presentation.scss'
 

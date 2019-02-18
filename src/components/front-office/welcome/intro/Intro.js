@@ -15,7 +15,6 @@ const Intro  = () => (
             </Button>
         </Container>
     </Jumbotron>
-
 );
 
 export default Intro;
