@@ -1,0 +1,9 @@
+.err-card {
+    border: none;
+    margin-top: calc(50vh - 99px/2);
+    margin-bottom: calc(50vh - 120px - 99px/2);
+}
+
+.err-card-body, .err-card-img {
+    text-align: center
+}

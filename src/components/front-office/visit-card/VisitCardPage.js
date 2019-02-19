@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 import VisitCard from './card/VisitCard';
-import './VisitCardPage.scss'
+import './VisitCardPage.scss';
 
 const VisitCardPage = () => (
-        <VisitCard />
+    <div className="visit-card-page">
+        <VisitCard/>
+    </div>
 )
 
 export default VisitCardPage;

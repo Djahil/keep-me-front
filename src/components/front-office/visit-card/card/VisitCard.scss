@@ -1,12 +1,12 @@
 @import '../../../../assets/scss/colors.scss';
 
 .visit-card {
+    background-color: $primary-white;
     width: 504px;
     height:327px;
-    margin-top: 50vh;
-    transform: translateY(-50%);
-    border: 1px solid rgb(51, 51, 51);
-    box-shadow: 0 0 2em rgba(51, 51, 51, 0.2);
+    transform: translateY(calc(50vh - 327px/2));
+    border: 2px solid rgb(51, 51, 51);
+    // box-shadow: 0 0 2em rgba(51, 51, 51, 0.2);
 }
 
 .vcard-content-right, .vcard-content-left {
