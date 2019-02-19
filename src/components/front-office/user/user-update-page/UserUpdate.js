@@ -1,5 +1,4 @@
 import React from 'react';
-import './UserUpdate.scss';
 
 const UserUpdate = () => (
     <div>
