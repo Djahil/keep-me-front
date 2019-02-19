@@ -5,11 +5,12 @@ import { hydraClient, fetchHydra as baseFetchHydra  } from '@api-platform/admin'
 import authProvider from './authProvider';
 import { Redirect } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import purple from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
 import { UserShow } from './Users/Show';
 import { UserEdit } from './Users/Edit';
 import { UserCreate } from './Users/Create';
 import { UserList } from './Users/List';
-
 import { EmployeeShow } from './Employees/Show';
 import { EmployeeEdit } from './Employees/Edit';
 import { EmployeeCreate } from './Employees/Create';
@@ -83,6 +84,7 @@ export default class extends Component {
                   <Resource name="users" list={ UserList } create={ UserCreate } show={ UserShow } edit={ UserEdit } title="Users" icon={UserIcon} />
                   <Resource name="employees" list={ EmployeeList } create={ EmployeeCreate } show={ EmployeeShow } edit={ EmployeeEdit } title="Employees" icon={EmployeeIcon}/> 
             </Admin>
+                </MuiThemeProvider>
             </React.Fragment>     
         )
     }
