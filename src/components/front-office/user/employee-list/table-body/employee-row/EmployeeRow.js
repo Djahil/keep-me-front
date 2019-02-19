@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button from 'react-bootstrap/Button';
 import './EmployeeRow.scss';
 
 import {FaEdit, FaShare, FaTrashAlt} from "react-icons/fa";
@@ -31,20 +32,20 @@ class EmployeeRow extends Component {
                     </td>
 
                     <td className="text-center" width="25%">
-                        <button className="btn btn-warning mr-2"
-                                onClick={() => this.props.onEdit(this.props.employee.id)}>
+                        <Button href={`user/update/${this.props.employee.id}`}
+                                variant="warning"  className="mr-2">
                             <FaEdit style={{color: 'white'}} className="fa-edit"/>
-                        </button>
+                        </Button>
 
-                        <button className="btn btn-success mr-2"
+                        <Button variant="success"  className="mr-2" href=""
                                 onClick={() => this.props.onShare(this.props.employee.id)}>
                             <FaShare style={{color: 'white'}} className="fa-share"/>
-                        </button>
+                        </Button>
 
-                        <button className="btn btn-danger"
+                        <Button variant="danger"  className="mr-2"
                                 onClick={() => this.props.onDelete(this.props.employee.id)}>
                             <FaTrashAlt style={{color: 'white'}} className="fa-del"/>
-                        </button>
+                        </Button>
                     </td>
                 </tr>
             </React.Fragment>
