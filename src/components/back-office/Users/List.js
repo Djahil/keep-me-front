@@ -15,7 +15,7 @@ const UserFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="nom" alwaysOn />
         <ReferenceInput label="User" source="id" reference="users" allowEmpty>
-            {/* <AutocompleteInput source="users" choices={choices} optionText={optionRenderer} /> */}
+            {<AutocompleteInput source="users" choices={choices} optionText={optionRenderer} /> }
             <SelectInput choices={choices} optionText={optionRenderer} />
         </ReferenceInput>
     </Filter>

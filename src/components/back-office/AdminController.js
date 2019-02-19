@@ -4,7 +4,7 @@ import parseHydraDocumentation from '@api-platform/api-doc-parser/lib/hydra/pars
 import { hydraClient, fetchHydra as baseFetchHydra  } from '@api-platform/admin';
 import authProvider from './authProvider';
 import { Redirect } from 'react-router-dom';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { UserShow } from './Users/Show';
 import { UserEdit } from './Users/Edit';
 import { UserCreate } from './Users/Create';
@@ -16,11 +16,16 @@ import { EmployeeCreate } from './Employees/Create';
 import { EmployeeList } from './Employees/List';
 import UserIcon from '@material-ui/icons/Person';
 import EmployeeIcon from '@material-ui/icons/Contacts';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import Loader from './Loader/Loader';
+
 
 const theme = createMuiTheme({
     palette: {
-        type: 'light'
+        primary: purple,
+        secondary: green,
+      },
+      status: {
+        danger: 'orange',
     },
 });
 
@@ -68,7 +73,7 @@ export default class extends Component {
         if (null === this.state.api) return <Loader />;    
         return (
             <React.Fragment>
-            <CssBaseline />
+                <MuiThemeProvider theme={theme}>
             <Admin api={ this.state.api }
                    apiDocumentationParser={ apiDocumentationParser }
                    dataProvider= { dataProvider(this.state.api) }
