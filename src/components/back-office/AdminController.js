@@ -4,23 +4,29 @@ import parseHydraDocumentation from '@api-platform/api-doc-parser/lib/hydra/pars
 import { hydraClient, fetchHydra as baseFetchHydra  } from '@api-platform/admin';
 import authProvider from './authProvider';
 import { Redirect } from 'react-router-dom';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import purple from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
 import { UserShow } from './Users/Show';
 import { UserEdit } from './Users/Edit';
 import { UserCreate } from './Users/Create';
 import { UserList } from './Users/List';
-
 import { EmployeeShow } from './Employees/Show';
 import { EmployeeEdit } from './Employees/Edit';
 import { EmployeeCreate } from './Employees/Create';
 import { EmployeeList } from './Employees/List';
 import UserIcon from '@material-ui/icons/Person';
 import EmployeeIcon from '@material-ui/icons/Contacts';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import Loader from './Loader/Loader';
+
 
 const theme = createMuiTheme({
     palette: {
-        type: 'light'
+        primary: purple,
+        secondary: green,
+      },
+      status: {
+        danger: 'orange',
     },
 });
 
@@ -68,7 +74,7 @@ export default class extends Component {
         if (null === this.state.api) return <Loader />;    
         return (
             <React.Fragment>
-            <CssBaseline />
+                <MuiThemeProvider theme={theme}>
             <Admin api={ this.state.api }
                    apiDocumentationParser={ apiDocumentationParser }
                    dataProvider= { dataProvider(this.state.api) }
@@ -78,6 +84,7 @@ export default class extends Component {
                   <Resource name="users" list={ UserList } create={ UserCreate } show={ UserShow } edit={ UserEdit } title="Users" icon={UserIcon} />
                   <Resource name="employees" list={ EmployeeList } create={ EmployeeCreate } show={ EmployeeShow } edit={ EmployeeEdit } title="Employees" icon={EmployeeIcon}/> 
             </Admin>
+                </MuiThemeProvider>
             </React.Fragment>     
         )
     }
