@@ -1,19 +1,20 @@
-@import '../../../assets/scss/colors.scss';
+@import '../../../../assets/scss/colors.scss';
 
 #intro {
     background-color:$primary-coral;
+    padding-top: 154px;
 }
 
 h1 {
-    color: $primary-white;
+    color: white;
 }
 
 .btn-primary {
     background-color: $primary-purple;
-    border: 0;
+    border: none;
     font-family: 'Quicksand', sans-serif;
 }
 
 .btn-primary:hover {
-    background-color: $primary-blue;
+    background-color: $secondary-purple;
 }
