@@ -7,7 +7,7 @@ import EmployeeList from "./employee-list/EmployeeList";
 class User extends Component {
     render() {
         return (
-            <div className="container mt-4">
+            <div className="container pt-5">
                 <EmployeeHeader />
                 <EmployeeList />
             </div>

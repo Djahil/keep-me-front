@@ -25,17 +25,17 @@ const App = () => (
             <Route path="/admin" component={AdminController} />
             <Route path="/card" component={VisitCardPage} />
 
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signin" component={Signin} />
-            <Route exact path="/forgot-password" component={ForgotPassword} />
+            <HeadFootLayoutRoute exact path="/contact" component={Contact} />
+            <HeadFootLayoutRoute exact path="/login" component={Login} />
+            <HeadFootLayoutRoute exact path="/signin" component={Signin} />
+            <HeadFootLayoutRoute exact path="/forgot-password" component={ForgotPassword} />
 
-            <Route exact path="/user" component={User} />
-            <Route exact path="/user/me" component={UserUpdate} />
+            <HeadFootLayoutRoute exact path="/user" component={User} />
+            <HeadFootLayoutRoute exact path="/user/me" component={UserUpdate} />
 
-            <Route exact path="/user/create" component={EmployeeCreate} />
-            <Route exact path="/user/update/:id(\d+)" component={EmployeeUpdate} />
-            <Route exact path="/user/share/:id" component={EmployeeShare} />
+            <HeadFootLayoutRoute exact path="/user/create" component={EmployeeCreate} />
+            <HeadFootLayoutRoute exact path="/user/update/:id(\d+)" component={EmployeeUpdate} />
+            <HeadFootLayoutRoute exact path="/user/share/:id" component={EmployeeShare} />
         </Switch>
     </BrowserRouter>
 );

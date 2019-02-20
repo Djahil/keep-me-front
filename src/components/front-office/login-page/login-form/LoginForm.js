@@ -15,7 +15,6 @@ class LoginForm extends Form {
     };
 
     render() {
-
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>

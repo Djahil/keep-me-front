@@ -33,16 +33,16 @@ class EmployeeRow extends Component {
 
                     <td className="text-center" width="25%">
                         <Button href={`user/update/${this.props.employee.id}`}
-                                variant="warning"  className="mr-2">
+                                variant="warning"  className="btn mr-2">
                             <FaEdit style={{color: 'white'}} className="fa-edit"/>
                         </Button>
 
-                        <Button variant="success"  className="mr-2" href=""
+                        <Button variant="success"  className="btn mr-2" href=""
                                 onClick={() => this.props.onShare(this.props.employee.id)}>
                             <FaShare style={{color: 'white'}} className="fa-share"/>
                         </Button>
 
-                        <Button variant="danger"  className="mr-2"
+                        <Button variant="danger"  className="btn mr-2"
                                 onClick={() => this.props.onDelete(this.props.employee.id)}>
                             <FaTrashAlt style={{color: 'white'}} className="fa-del"/>
                         </Button>

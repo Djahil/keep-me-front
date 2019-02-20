@@ -20,7 +20,7 @@ class EmployeeUpdate extends Component {
     render() {
         if (this.state.employee !== null) {
             return (
-                <div className="container mt-4">
+                <div className="container pt-5">
                     <UpdateEmployeeForm
                         employee={this.state.employee}
                         onSubmit={this.handleSubmit}
