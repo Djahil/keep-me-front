@@ -7,9 +7,10 @@ import mockUser from '../../../assets/data/mockUser';
 class VisitCardPage extends Component {
 
     state = {
-        cardInfos: {},
+        cardInfos: {
+        },
         isMockMessageVisible: false,
-        isCardVisible: false
+        // isCardVisible: false
     }
 
     componentDidMount() {
@@ -21,12 +22,13 @@ class VisitCardPage extends Component {
                 res => {
                     if(res.data) {
                         this.setState({cardInfos:res.data})
-                        // ON force le logo en dur
-                        // this.setState({cardInfos.logo})
+                        if(!this.state.cardInfos.logo){
+
+                        }
                     } else {
                         this.setState({cardInfos:mockUser})
                     }
-                    this.setState({isCardVisible: true})
+                    // this.setState({isCardVisible: true})
                     console.log(res)
                 }
             )
@@ -46,6 +48,7 @@ class VisitCardPage extends Component {
                     prenom={this.state.cardInfos.prenom}
                     poste={this.state.cardInfos.poste}
                     mail={this.state.cardInfos.mail}
+                    phone={this.state.cardInfos.telephone}
                     entreprise={this.state.cardInfos.entreprise}
                 />
             </div>

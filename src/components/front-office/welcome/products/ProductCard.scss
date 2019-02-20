@@ -17,7 +17,18 @@ p {
     color: $primary-black;
 }
 
-.text-center {
+.product-text-container, .product-text-container-inner {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.product-text-container-inner {
+    position: absolute;
+    width: 100%;
+}
+
+.text-center-card {
     position: relative;
     top:50%;
     transform: translateY(-50%);
