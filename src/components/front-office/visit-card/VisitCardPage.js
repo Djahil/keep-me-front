@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import VisitCard from './card/VisitCard';
 import './VisitCardPage.scss';
 import mockUser from '../../../assets/data/mockUser';
@@ -14,22 +15,24 @@ class VisitCardPage extends Component {
     componentDidMount() {
         const {match: {params} } = this.props
         
-        fetch(`https://localhost:8001/api/${params.slug}/`)
-            .then(res => res.json())
+        axios.get(`http://localhost:8000/employee/show/${params.slug}/`)
+            // .then(res => res.json())
             .then(
                 res => {
-                    const isCardVisible = true
-                    this.setState({isCardVisible})
-                    const cardInfos = res;
-                    this.setState({cardInfos})
+                    if(res.data) {
+                        this.setState({cardInfos:res.data})
+                        // ON force le logo en dur
+                        // this.setState({cardInfos.logo})
+                    } else {
+                        this.setState({cardInfos:mockUser})
+                    }
+                    this.setState({isCardVisible: true})
                     console.log(res)
-                },
+                }
+            )
+            .catch( 
                 err => {
-                    const cardInfos = mockUser;
-                    this.setState({cardInfos})
                     console.log(err)
-                    const isMockMessageVisible = true;
-                    this.setState({isMockMessageVisible})
                 }
             )
     }
