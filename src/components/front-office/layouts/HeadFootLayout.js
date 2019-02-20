@@ -6,7 +6,7 @@ import Footer from './footer/Footer'
 
 const style = {
     marginTop: '90px',
-    minHeight: '78vh' // chiffre trouvé a la mano comme Papa Truchot !
+    minHeight: '77vh' // chiffre trouvé a la mano comme Papa Truchot !
 };
 
 const HeadFootLayout = ({children}) => (

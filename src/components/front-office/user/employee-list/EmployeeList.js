@@ -1,46 +1,34 @@
-import React, {Component} from 'react';
-import './EmployeeList.scss';
+import React from 'react';
 
-import TableHeader from "./table-header/TableHeader";
-import TableBody from "./table-body/TableBody";
+import EmployeeRow from './EmployeeRow';
 
-import mock from "./employees.mock";
-
-class EmployeeList extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {employees: mock};
-    }
-
-    render() {
-        return (
-            <div className="container mt-lg-5">
-                <div className=" admin-projets">
-                    <table id=" table-xs" className=" table table-bordered table-hover table-xs">
-                        <TableHeader onCreate=""/>
-                        <TableBody onEdit={this.handleEdit}
-                                   onShare={this.handleShare}
-                                   onDelete={this.handleDelete}
-                                   employees={this.state.employees}/>
-                    </table>
-                </div>
-            </div>
-        );
-    };
-
-    handleDelete = (employeeId) => {
-        let employees = this.state.employees.filter(index => index.id !== employeeId);
-        this.setState({employees});
-    };
-
-    handleEdit = (employeeId) => {
-        console.log('Editer l\'employee', employeeId);
-    };
-
-    handleShare = (employeeId) => {
-        console.log('Partager l\'employee ', employeeId);
-    };
-}
+const EmployeeList = ({ handleDelete, handleEdit, handleShare, employees }) => (
+    <div className="container mt-lg-5">
+        <div className=" admin-projets">
+            <table id=" table-xs" className=" table table-bordered table-hover table-xs">
+                <thead>
+                    <tr>
+                        <th className=" text-center" width="15%">Nom</th>
+                        <th className="text-center" width="15%">Prenom</th>
+                        <th className="text-center" width="30%">Email</th>
+                        <th className="text-center" width="15%">Telephone</th>
+                        <th className="text-center" width="25%">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {employees.map(e => (
+                        <EmployeeRow key={e.id}
+                            employee={e}
+                            onEdit={handleEdit}
+                            onShare={handleShare}
+                            onDelete={handleDelete}
+                        />
+                    )
+                    )}
+                </tbody>
+            </table>
+        </div>
+    </div>
+);
 
 export default EmployeeList;
