@@ -10,13 +10,13 @@ class VisitCardPage extends Component {
         cardInfos: {
         },
         isMockMessageVisible: false,
-        // isCardVisible: false
+        isCardVisible: false
     }
 
     componentDidMount() {
         const {match: {params} } = this.props
         
-        axios.get(`http://localhost:8000/employee/show/${params.slug}/`)
+        axios.get(`http://localhost:8000/card/${params.slug}/`)
             // .then(res => res.json())
             .then(
                 res => {
@@ -28,7 +28,7 @@ class VisitCardPage extends Component {
                     } else {
                         this.setState({cardInfos:mockUser})
                     }
-                    // this.setState({isCardVisible: true})
+                    this.setState({isCardVisible: true})
                     console.log(res)
                 }
             )
@@ -47,7 +47,7 @@ class VisitCardPage extends Component {
                     nom={this.state.cardInfos.nom}
                     prenom={this.state.cardInfos.prenom}
                     poste={this.state.cardInfos.poste}
-                    mail={this.state.cardInfos.mail}
+                    mail={this.state.cardInfos.email}
                     phone={this.state.cardInfos.telephone}
                     entreprise={this.state.cardInfos.entreprise}
                 />
