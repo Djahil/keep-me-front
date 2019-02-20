@@ -11,15 +11,6 @@ class VisitCardPage extends Component {
         isCardVisible: false
     }
 
-    test = {
-        'logo': 'test',
-        'nom': 'test',
-        'prenom': 'test',
-        'poste': 'test',
-        'mail': 'test',
-        'entreprise': 'test',        
-    }
-
     componentDidMount() {
         const {match: {params} } = this.props
         
