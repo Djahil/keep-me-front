@@ -1,0 +1,12 @@
+@import '../../../assets/scss/colors.scss';
+
+.visit-card-page {
+    height: 100vh;
+    background-image: 
+        linear-gradient($primary-purple-transp, $primary-coral-transp),
+        url("../../../assets/img/pictures/forest.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity:0.75;
+}
