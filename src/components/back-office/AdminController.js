@@ -1,33 +1,31 @@
 import React, { Component } from 'react';
-import { Admin, Resource } from 'react-admin';
+import { Admin, Resource, Login} from 'react-admin';
 import parseHydraDocumentation from '@api-platform/api-doc-parser/lib/hydra/parseHydraDocumentation';
 import { hydraClient, fetchHydra as baseFetchHydra  } from '@api-platform/admin';
-import authProvider from './authProvider';
+import { createMuiTheme } from '@material-ui/core/styles';
+import  authProvider from './authProvider';
 import { Redirect } from 'react-router-dom';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
 import { UserShow } from './Users/Show';
 import { UserEdit } from './Users/Edit';
 import { UserCreate } from './Users/Create';
 import { UserList } from './Users/List';
 import { EmployeeShow } from './Employees/Show';
-import { EmployeeEdit } from './Employees/Edit';
+import { EmployeeEdit } from './Employees/Edit'
 import { EmployeeCreate } from './Employees/Create';
 import { EmployeeList } from './Employees/List';
 import UserIcon from '@material-ui/icons/Person';
 import EmployeeIcon from '@material-ui/icons/Contacts';
 import Loader from './Loader/Loader';
+import MyLayout from './Layout/MyLayout';
 
+
+
+const MyLoginPage = () => <Login backgroundImage="/background.jpg" />;
 
 const theme = createMuiTheme({
-    palette: {
-        primary: purple,
-        secondary: green,
+    typography: {
+        useNextVariants: true,
       },
-      status: {
-        danger: 'orange',
-    },
 });
 
 const entrypoint = process.env.REACT_APP_API_URL;
@@ -74,17 +72,19 @@ export default class extends Component {
         if (null === this.state.api) return <Loader />;    
         return (
             <React.Fragment>
-                <MuiThemeProvider theme={theme}>
-            <Admin api={ this.state.api }
-                   apiDocumentationParser={ apiDocumentationParser }
-                   dataProvider= { dataProvider(this.state.api) }
-                   theme={ theme }
-                   authProvider={ authProvider }          
-            >    
-                  <Resource name="users" list={ UserList } create={ UserCreate } show={ UserShow } edit={ UserEdit } title="Users" icon={UserIcon} />
-                  <Resource name="employees" list={ EmployeeList } create={ EmployeeCreate } show={ EmployeeShow } edit={ EmployeeEdit } title="Employees" icon={EmployeeIcon}/> 
-            </Admin>
-                </MuiThemeProvider>
+                    <Admin api={ this.state.api }
+                        apiDocumentationParser={ apiDocumentationParser }
+                        dataProvider= { dataProvider(this.state.api) }     
+                        authProvider={ authProvider }
+                        appLayout={MyLayout}
+                        theme={theme}
+                        loginPage={MyLoginPage}
+                               
+                    >    
+                        <Resource name="users" list={ UserList } create={ UserCreate } show={ UserShow } edit={ UserEdit } title="Users" icon={UserIcon} />
+                        <Resource name="employees" list={ EmployeeList } create={ EmployeeCreate } show={ EmployeeShow } edit={ EmployeeEdit } title="Employees" icon={EmployeeIcon}/> 
+                    </Admin>
+                    
             </React.Fragment>     
         )
     }
