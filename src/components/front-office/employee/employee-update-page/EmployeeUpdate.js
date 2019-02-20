@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
 import './EmployeeUpdate.scss';
 
-import mock from "../../user/employee-list/employees.mock";
+import mock from '../../data/employees.mock'
 import UpdateEmployeeForm from "./employee-update-form/UpdateEmployeeForm";
 
 class EmployeeUpdate extends Component {
