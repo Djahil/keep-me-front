@@ -1,20 +1,48 @@
 import React from 'react';
-import { List, Datagrid, TextField, email, ShowButton, EditButton } from 'react-admin';
+import { List, Datagrid, TextField, ShowButton, EditButton, Filter, ReferenceInput, AutocompleteInput, SelectInput, TextInput, Responsive, SimpleList } from 'react-admin';
 // import { CustomPagination } from '../Pagination/CustomPagination';
 
+const choices = [
+    {
+        firstName: 'prenom',
+        lastName: 'nom'
+    }
+];
+
+const optionRenderer = choice => `${choices.firstName} ${choices.lastName}`;
+
+const UserFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search" source="nom" alwaysOn />
+        <ReferenceInput label="User" source="id" reference="users" allowEmpty>
+            {/* <AutocompleteInput source="users" choices={choices} optionText={optionRenderer} /> */}
+            <SelectInput optionText="nom" />
+        </ReferenceInput>
+    </Filter>
+);
+
 export const UserList = (props) => (
-    <List {...props} title="Users">
-        <Datagrid>
-            <TextField source="email" label="Email" validate={ email() } />
-            <TextField  source="nom" label="Lastname"/>
-            <TextField  source="prenom" label="Firstname"/>
-            <TextField  source="nom_entreprise" label="Nom Entreprise"/>
-            <TextField  source="adresse" label="Adresse"/>
-            <TextField  source="code_postal" label="Code Postal"/>
-            <TextField  source="site_web" label="Site Web"/>      
-            <TextField  source="social" label="Social"/>      
-            <ShowButton />
-            <EditButton />   
-        </Datagrid>
+    <List {...props} title="Users" filters={ <UserFilter /> }>
+        <Responsive 
+            small = {
+                <SimpleList
+                    reference="users"
+                    primaryText = {nom}
+                    // <ShowButton />
+                    // <EditButton /> 
+                />
+            }
+            medium = {
+                <Datagrid>
+                    <TextField source="nom" label="Nom"/>
+                    <TextField source="prenom" label="Prénom"/>
+                    <TextField source="nomEntreprise" label="Nom Entreprise"/>
+                    <TextField source="email" label="Email" /> 
+                    <TextField source="siteWeb" label="Site Web" /> 
+                    <ShowButton />
+                    <EditButton />   
+                </Datagrid>
+            }
+        />
     </List>
 );

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Login.scss';
 
 const Login = () => (
     <div>
@@ -6,6 +7,7 @@ const Login = () => (
         <form action="">
             MON FORMULAIRE ICI
         </form>
+        <a href="/">Mot de passe oublie ?</a>
     </div>
 );
 
