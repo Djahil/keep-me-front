@@ -16,7 +16,7 @@ const UserFilter = (props) => (
         <TextInput label="Search" source="nom" alwaysOn />
         <ReferenceInput label="User" source="id" reference="users" allowEmpty>
             {/* <AutocompleteInput source="users" choices={choices} optionText={optionRenderer} /> */}
-            <SelectInput choices={choices} optionText={optionRenderer} />
+            <SelectInput optionText="nom" />
         </ReferenceInput>
     </Filter>
 );
@@ -25,8 +25,11 @@ export const UserList = (props) => (
     <List {...props} title="Users" filters={ <UserFilter /> }>
         <Responsive 
             small = {
-                <SimpleList 
-                    primaryText = "plop"
+                <SimpleList
+                    reference="users"
+                    primaryText = {nom}
+                    // <ShowButton />
+                    // <EditButton /> 
                 />
             }
             medium = {
