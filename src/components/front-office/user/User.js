@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
+import './User.scss';
 
-const User = () => (
-    <div>
-        <h1>USER</h1>
-    </div>
-);
+import EmployeeHeader from "./employee-header/EmployeeHeader";
+import EmployeeList from "./employee-list/EmployeeList";
+
+class User extends Component {
+    render() {
+        return (
+            <div className="container pt-5">
+                <EmployeeHeader />
+                <EmployeeList />
+            </div>
+        );
+    }
+}
 
 export default User;

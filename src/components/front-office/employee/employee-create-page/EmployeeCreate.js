@@ -1,4 +1,5 @@
 import React from 'react';
+import './EmployeeCreate.scss'
 
 const EmployeeCreate = () => (
     <div>
