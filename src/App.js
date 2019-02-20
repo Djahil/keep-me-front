@@ -8,6 +8,7 @@ import HeadFootLayoutRoute from './components/front-office/layouts/HeadFootLayou
 import AdminController from './components/back-office/AdminController';
 import WelcomePage from './components/front-office/welcome/WelcomePage';
 import VisitCardPage from './components/front-office/visit-card/VisitCardPage';
+
 import Contact from "./components/front-office/contact/Contact";
 import Login from "./components/front-office/login-page/Login";
 import Signin from "./components/front-office/signin/Signin";
@@ -18,12 +19,13 @@ import EmployeeCreate from "./components/front-office/employee/employee-create-p
 import EmployeeUpdate from "./components/front-office/employee/employee-update-page/EmployeeUpdate";
 import EmployeeShare from "./components/front-office/employee/employee-share/EmployeeShare";
 
+import ErrorPage from './components/front-office/error/ErrorPage';
+
 const App = () => (
     <BrowserRouter>
         <Switch>
             <HeadFootLayoutRoute exact path = "/" component = {WelcomePage} />
             <Route path="/admin" component={AdminController} />
-            <Route path="/card" component={VisitCardPage} />
 
             <HeadFootLayoutRoute exact path="/contact" component={Contact} />
             <HeadFootLayoutRoute exact path="/login" component={Login} />
@@ -36,6 +38,9 @@ const App = () => (
             <HeadFootLayoutRoute exact path="/user/create" component={EmployeeCreate} />
             <HeadFootLayoutRoute exact path="/user/update/:id(\d+)" component={EmployeeUpdate} />
             <HeadFootLayoutRoute exact path="/user/share/:id" component={EmployeeShare} />
+
+            <Route path="/card/:slug" component={VisitCardPage} />
+            <HeadFootLayoutRoute component={ErrorPage} />
         </Switch>
     </BrowserRouter>
 );
