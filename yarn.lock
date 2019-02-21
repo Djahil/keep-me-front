@@ -4566,14 +4566,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
-  integrity sha512-m/pZQy4Gj287eNy94nivy5wchN3Kp+Q5WgUPNy5lJSZ3sgkVKSYV/ZChMAQVIgx1SqfZ2zBZtPA2YlXIWxxJOQ==
-  dependencies:
-    debug "^3.2.6"
-
-follow-redirects@^1.3.0:
+follow-redirects@^1.0.0, follow-redirects@^1.3.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
   integrity sha512-m/pZQy4Gj287eNy94nivy5wchN3Kp+Q5WgUPNy5lJSZ3sgkVKSYV/ZChMAQVIgx1SqfZ2zBZtPA2YlXIWxxJOQ==
@@ -6645,9 +6638,9 @@ jsonld@^0.4.11:
     xmldom "0.1.19"
 
 jsonld@^1.2.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/jsonld/-/jsonld-1.5.1.tgz#3b7a6060ba50157db92fdb550749bf600d504360"
-  integrity sha512-/PFTIAwdF5BSWmPd+XMSheus+Att8oRtJT78ZR/ZMkmZL/dLm3RtNBC9BJmDaH4SyIZEik4pvvEJ3e/MgGBF/w==
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/jsonld/-/jsonld-1.5.2.tgz#f8004a428050318883ada9d6cfd617f6476f2a2a"
+  integrity sha512-QBJ5+AWhrb2c1lb+Mo0e3md5Ew+5+qpT541IO3S0OrzotQmZ66+h0vZ/X5Tuidsoaiar1aCm6KpEnFXd4ArMMg==
   dependencies:
     rdf-canonize "^1.0.1"
     request "^2.88.0"
@@ -8065,9 +8058,9 @@ npm-logical-tree@^1.2.1:
     validate-npm-package-name "^3.0.0"
 
 npm-packlist@^1.1.12, npm-packlist@^1.1.6, npm-packlist@^1.3.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/npm-packlist/-/npm-packlist-1.4.0.tgz#b2c0867af2a396e0734343d2b6b3f7934db935f2"
-  integrity sha512-zCAmKshsFx2MhOsXdYmZd1DO2d8ts80kVASSWX6lv8654i0edCnNCoEqwVsMygl1BSroCPW6Zh5Dcw+ann775g==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/npm-packlist/-/npm-packlist-1.4.1.tgz#19064cdf988da80ea3cee45533879d90192bbfbc"
+  integrity sha512-+TcdO7HJJ8peiiYhvPxsEDhF3PJFGUGRcFsGve3vxvxdcpO2Z4Z7rkosRM0kWj6LfbK/P0gu3dzk5RU1ffvFcw==
   dependencies:
     ignore-walk "^3.0.1"
     npm-bundled "^1.0.1"
@@ -10291,7 +10284,6 @@ read-package-tree@^5.2.2:
     once "^1.3.0"
     read-package-json "^2.0.0"
     readdir-scoped-modules "^1.0.0"
->>>>>>> dev
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
