@@ -14,9 +14,9 @@ import Signin from "./components/front-office/signin/Signin";
 import ForgotPassword from "./components/front-office/forgot-password/ForgotPassword";
 import User from "./components/front-office/user/User";
 import UserUpdate from "./components/front-office/user/user-update-page/UserUpdate";
-import EmployeeCreate from "./components/front-office/employee/employee-create-page/EmployeeCreate";
 import EmployeeUpdate from "./components/front-office/employee/employee-update-page/EmployeeUpdate";
 import EmployeeShare from "./components/front-office/employee/employee-share/EmployeeShare";
+import EmployeeCreateContainer from './components/front-office/employee/employee-create-page/EmployeeCreateContainer';
 
 const App = () => (
     <BrowserRouter>
@@ -33,7 +33,7 @@ const App = () => (
             <HeadFootLayoutRoute exact path="/user" component={User} />
             <HeadFootLayoutRoute exact path="/user/me" component={UserUpdate} />
 
-            <HeadFootLayoutRoute exact path="/user/create" component={EmployeeCreate} />
+            <HeadFootLayoutRoute exact path="/user/create" component={EmployeeCreateContainer} />
             <HeadFootLayoutRoute exact path="/user/update/:id(\d+)" component={EmployeeUpdate} />
             <HeadFootLayoutRoute exact path="/user/share/:id" component={EmployeeShare} />
         </Switch>
