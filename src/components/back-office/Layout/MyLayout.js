@@ -10,7 +10,6 @@ const MyLayout = (props) =>
     {...props}
     sidebar={MySidebar} 
     appBar={MyAppBar} 
-    menu={ MyMenu }
 />;
 
 export default MyLayout;

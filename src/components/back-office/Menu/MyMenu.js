@@ -5,6 +5,12 @@ import { withRouter } from 'react-router-dom';
 
 const MyMenu = ({ resources, onMenuClick, logout }) => (
     <div>
+        <MenuItemLink
+            key="dashboard"
+            to="/"
+            primaryText="Accueil"
+            onClick={onMenuClick}
+        />
         {resources.map(
             resource => (
                 <MenuItemLink   
