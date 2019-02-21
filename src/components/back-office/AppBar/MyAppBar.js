@@ -32,7 +32,7 @@ const MyAppBar = ({classes, ...props})  => (
              Keepme
          </h2>
         </Toolbar>  
-        <IconButton color="inherit">
+            <IconButton color="inherit">
                 <Badge badgeContent={17} color="secondary">
                   <NotificationsIcon />
                 </Badge>
@@ -41,8 +41,8 @@ const MyAppBar = ({classes, ...props})  => (
                 <Badge  badgeContent={2} color="secondary" >
                     <MailIcon />  
                 </Badge>    
-        </IconButton>
-    </AppBar>
+            </IconButton>
+    </AppBar> 
 );
 
 MyAppBar.propTypes = {
