@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, TextField, ShowButton, EditButton, Filter, ReferenceInput, SelectInput, TextInput, Responsive, SimpleList } from 'react-admin';
+import { List, Datagrid, TextField, ShowButton, EditButton, Filter, ReferenceInput, SelectInput, TextInput, Responsive } from 'react-admin';
 // import { CustomPagination } from '../Pagination/CustomPagination';
 
 // const choices = [
