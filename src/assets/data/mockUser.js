@@ -5,7 +5,8 @@ const mockUser = {
     nom: 'Begood',
     prenom: 'Johnny',
     poste: 'Feel good manager',
-    mail: 'johnny.begood@lic.com',
+    telephone: '06 01 02 03 04 05',
+    email: 'johnny.begood@lic.com',
     entreprise: 'Lorem ipsum corp.',
 }
 

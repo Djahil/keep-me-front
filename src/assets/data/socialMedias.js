@@ -28,6 +28,6 @@ const social = [
         url: "https://twitter.com",
         alt: "logo Twitter"
     }
-];
+]
 
 export default social;

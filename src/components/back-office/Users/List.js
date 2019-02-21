@@ -1,15 +1,15 @@
 import React from 'react';
-import { List, Datagrid, TextField, ShowButton, EditButton, Filter, ReferenceInput, AutocompleteInput, SelectInput, TextInput, Responsive, SimpleList } from 'react-admin';
+import { List, Datagrid, TextField, ShowButton, EditButton, Filter, ReferenceInput, SelectInput, TextInput, Responsive, SimpleList } from 'react-admin';
 // import { CustomPagination } from '../Pagination/CustomPagination';
 
-const choices = [
-    {
-        firstName: 'prenom',
-        lastName: 'nom'
-    }
-];
+// const choices = [
+//     {
+//         firstName: 'prenom',
+//         lastName: 'nom'
+//     }
+// ];
 
-const optionRenderer = choice => `${choices.firstName} ${choices.lastName}`;
+// const optionRenderer = choice => `${choices.firstName} ${choices.lastName}`;
 
 const UserFilter = (props) => (
     <Filter {...props}>
@@ -25,12 +25,13 @@ export const UserList = (props) => (
     <List {...props} title="Users" filters={ <UserFilter /> }>
         <Responsive 
             small = {
-                <SimpleList
-                    reference="users"
-                    primaryText = {nom}
+                <TextField label="ta chatte" />
+                // <SimpleList
+                    // reference="users"
+                    // primaryText = {users => users.nom}
                     // <ShowButton />
                     // <EditButton /> 
-                />
+                // />
             }
             medium = {
                 <Datagrid>

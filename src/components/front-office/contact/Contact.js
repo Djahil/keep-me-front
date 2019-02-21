@@ -1,12 +1,9 @@
 import React, { Fragment } from 'react';
-// import  FormContact from './parts/FormContact'
-import  Contact from './parts/FormContact'
-
-
+import  FormContact from './parts/FormContact'
 
 const ContactPage = () => (
     <Fragment>
-        <Contact/>
+        <FormContact/>
     </Fragment>
 );
 

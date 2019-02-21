@@ -10,7 +10,6 @@ class Contact extends Component {
         show: false,
         msg: "You have an error in your form",
         modalheader: ""
-
     };
 
     showModal = (props) => {
@@ -23,7 +22,6 @@ class Contact extends Component {
     hideModal = () => {
         this.setState({show: false})
     };
-
 
     render() {
         return (
@@ -52,6 +50,9 @@ class Contact extends Component {
                                         <Alert variant="success">
                                             {this.state.msg}
                                         </Alert>
+                                        <Row>
+                                            {props.values.entreprise}
+                                        </Row>
                                         <Row>
                                             {props.values.email}
                                         </Row>
