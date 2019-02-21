@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import VisitCard from './card/VisitCard';
 import './VisitCardPage.scss';
 import mockUser from '../../../assets/data/mockUser';
 import Loader from 'react-loader-spinner';
+import { apiGetCard } from '../../../services/ApiService';
+
+
+const ep = process.env.REACT_APP_API_URL_CARD
 
 class VisitCardPage extends Component {
-
     state = {
         cardInfos: {},
         isMockMessageVisible: false,
@@ -15,8 +17,7 @@ class VisitCardPage extends Component {
 
     componentDidMount() {
         const {match: {params} } = this.props
-        
-        axios.get(`http://localhost:8000/card/${params.slug}/`)
+        apiGetCard(ep, params.slug)
             .then(
                 res => {
                     this.setState({ isCardVisible: true })
@@ -26,6 +27,7 @@ class VisitCardPage extends Component {
             .catch( 
                 err => {
                     this.setState({ isCardVisible: true })
+                    this.setState({ isMockMessageVisible: true })
                     this.setState({ cardInfos:mockUser })
                 }
             )
@@ -46,9 +48,26 @@ class VisitCardPage extends Component {
                         phone={cardInfos.telephone}
                         entreprise={cardInfos.entreprise}
                     />
+                    {this.state.isMockMessageVisible ? <p>Nous n'avons pas pu récupérer les informations.<br />Cette carte avec un template par défaut s'affiche.</p> : <></>}
                 </div>
             )
         }
+        // if (this.state.isCardVisible && this.state.isMockMessageVisible) {
+        //     return (
+        //         <div className="visit-card-page">
+        //             <VisitCard
+        //                 logo={cardInfos.logo}
+        //                 nom={cardInfos.nom}
+        //                 prenom={cardInfos.prenom}
+        //                 poste={cardInfos.poste}
+        //                 mail={cardInfos.email}
+        //                 phone={cardInfos.telephone}
+        //                 entreprise={cardInfos.entreprise}
+        //             />
+        //             <p>MESSAGE</p>
+        //         </div>
+        //     )
+        // }
         return(
             <div className="visit-card-page">
                 <div className="loadingCard">
