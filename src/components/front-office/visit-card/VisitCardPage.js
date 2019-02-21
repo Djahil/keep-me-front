@@ -24,7 +24,7 @@ class VisitCardPage extends Component {
                 }
             )
             .catch( 
-                error => {
+                err => {
                     this.setState({ isCardVisible: true })
                     this.setState({ cardInfos:mockUser })
                 }
