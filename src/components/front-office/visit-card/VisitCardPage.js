@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import VisitCard from './card/VisitCard';
 import './VisitCardPage.scss';
 import mockUser from '../../../assets/data/mockUser';
+import Loader from 'react-loader-spinner';
 
 class VisitCardPage extends Component {
 
@@ -14,37 +16,44 @@ class VisitCardPage extends Component {
     componentDidMount() {
         const {match: {params} } = this.props
         
-        fetch(`https://localhost:8001/api/${params.slug}/`)
-            .then(res => res.json())
+        axios.get(`http://localhost:8000/card/${params.slug}/`)
             .then(
                 res => {
-                    const isCardVisible = true
-                    this.setState({isCardVisible})
-                    const cardInfos = res;
-                    this.setState({cardInfos})
-                    console.log(res)
-                },
+                    this.setState({ isCardVisible: true })
+                    this.setState({ cardInfos:res.data })
+                }
+            )
+            .catch( 
                 err => {
-                    const cardInfos = mockUser;
-                    this.setState({cardInfos})
-                    console.log(err)
-                    const isMockMessageVisible = true;
-                    this.setState({isMockMessageVisible})
+                    this.setState({ isCardVisible: true })
+                    this.setState({ cardInfos:mockUser })
                 }
             )
     }
 
     render () {
-        return (
+        const { cardInfos } = this.state
+
+        if (this.state.isCardVisible) {
+            return (
+                <div className="visit-card-page">
+                    <VisitCard
+                        logo={cardInfos.logo}
+                        nom={cardInfos.nom}
+                        prenom={cardInfos.prenom}
+                        poste={cardInfos.poste}
+                        mail={cardInfos.email}
+                        phone={cardInfos.telephone}
+                        entreprise={cardInfos.entreprise}
+                    />
+                </div>
+            )
+        }
+        return(
             <div className="visit-card-page">
-                <VisitCard
-                    logo={this.state.cardInfos.logo}
-                    nom={this.state.cardInfos.nom}
-                    prenom={this.state.cardInfos.prenom}
-                    poste={this.state.cardInfos.poste}
-                    mail={this.state.cardInfos.mail}
-                    entreprise={this.state.cardInfos.entreprise}
-                />
+                <div className="loadingCard">
+                <Loader type="Circles" color="rgb(222, 222, 222)" height={80} width={80}/>
+                </div>
             </div>
         )
     }
