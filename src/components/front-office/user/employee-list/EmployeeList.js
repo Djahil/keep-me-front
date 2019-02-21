@@ -3,7 +3,6 @@ import React from 'react';
 import EmployeeRow from './EmployeeRow';
 
 const EmployeeList = ({ handleDelete, handleEdit, handleShare, employees }) => (
-    <div className="container mt-lg-5">
         <div className=" admin-projets">
             <table id=" table-xs" className=" table table-bordered table-hover table-xs">
                 <thead>
@@ -27,7 +26,6 @@ const EmployeeList = ({ handleDelete, handleEdit, handleShare, employees }) => (
                     )}
                 </tbody>
             </table>
-        </div>
     </div>
 );
 

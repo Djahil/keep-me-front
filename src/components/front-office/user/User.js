@@ -4,7 +4,7 @@ import * as userService from '../../front-office/services/UserService';
 
 import EmployeeList from "./employee-list/EmployeeList";
 import EmployeeSearch from './employee-header/EmployeeSearch';
-import EmployeeCreate from './employee-header/EmployeeCreate';
+import {FaPlus} from "react-icons/fa";
 
 class User extends Component {
     constructor(props) {
@@ -20,8 +20,8 @@ class User extends Component {
             employees: userService.deleteEmployee(this.state.employees, employeeId)
         });
     };
-    handleEdit = employeeId => { userService.editEmployee(employeeId); }
-    handleShare = employeeId => { userService.shareEmployee(employeeId); }
+    handleEdit = employeeId => { userService.editEmployee(employeeId); };
+    handleShare = employeeId => { userService.shareEmployee(employeeId); };
 
     onSearchChange = e => {
         this.setState({
@@ -32,11 +32,22 @@ class User extends Component {
     render() {
         return (
             <div className="container pt-5">
-                <div>
-                    <h1 className="title">Mes cartes de visites H1</h1>
-                    <EmployeeSearch input={this.state.searchInput} onChange={this.onSearchChange} />
-                    <EmployeeCreate />
+                <h1 className="title">Mes cartes de visites H1</h1>
+
+                <div className="row">
+                    <div className="col-md-9">
+                        <EmployeeSearch input={this.state.searchInput}
+                                        onChange={this.onSearchChange} />
+                    </div>
+
+                    <div className="col-md-3 text-center">
+                        <a href="/user/create" style={{textDecoration: 'none', color: 'grey'}}>
+                            <FaPlus/> <span className="pl-2 bold">Nouvelle carte</span>
+                        </a>
+                    </div>
                 </div>
+
+
                 <EmployeeList
                     employees={this.state.employees.filter(emp =>
                         emp.nom.includes(this.state.searchInput) ||

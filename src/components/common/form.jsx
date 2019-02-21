@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Joi from "joi-browser";
+import Button from 'react-bootstrap/Button';
+
 import Input from "./input";
 
 class Form extends Component {
@@ -52,12 +54,25 @@ class Form extends Component {
         this.setState({data, errors});
     };
 
-    renderButton(label) {
+    // renderButton(label) {
+    //     return (
+    //         <button disabled={this.validate()} // block submit button
+    //                 className="btn btn-primary mb-4 float-right">
+    //             {label}
+    //         </button>
+    //     )
+    // }
+
+    renderButton(variant, className, label, labelColor, href) {
         return (
-            <button disabled={this.validate()} // block submit button
-                    className="btn btn-primary mb-4 float-right">
-                {label}
-            </button>
+            <Button disabled={this.validate()} // block submit button
+                    variant={variant}
+                    className={`btn ${className}`}
+                    href={href}>
+                <span style={{color: labelColor}}>
+                    {label}
+                </span>
+            </Button>
         )
     }
 
