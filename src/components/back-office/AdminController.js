@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Admin, Resource, Login} from 'react-admin';
+import { Admin, Resource } from 'react-admin';
 import parseHydraDocumentation from '@api-platform/api-doc-parser/lib/hydra/parseHydraDocumentation';
 import { hydraClient, fetchHydra as baseFetchHydra  } from '@api-platform/admin';
-import { createMuiTheme } from '@material-ui/core/styles';
 import  authProvider from './authProvider';
 import { Redirect } from 'react-router-dom';
 import { UserShow } from './Users/Show';
@@ -13,20 +12,11 @@ import { EmployeeShow } from './Employees/Show';
 import { EmployeeEdit } from './Employees/Edit'
 import { EmployeeCreate } from './Employees/Create';
 import { EmployeeList } from './Employees/List';
-import UserIcon from '@material-ui/icons/Person';
-import EmployeeIcon from '@material-ui/icons/Contacts';
+import UserIcon from '@material-ui/icons/Book';
+import EmployeeIcon from '@material-ui/icons/Group';
 import Loader from './Loader/Loader';
 import MyLayout from './Layout/MyLayout';
-
-
-
-const MyLoginPage = () => <Login backgroundImage="/background.jpg" />;
-
-const theme = createMuiTheme({
-    typography: {
-        useNextVariants: true,
-      },
-});
+import Dashboard from './Dashboard/Dashboard';
 
 const entrypoint = process.env.REACT_APP_API_URL;
 const fetchHeaders = {'Authorization': `Bearer ${window.localStorage.getItem('token')}`};
@@ -73,13 +63,11 @@ export default class extends Component {
         return (
             <React.Fragment>
                     <Admin api={ this.state.api }
+                        dashboard={ Dashboard }
                         apiDocumentationParser={ apiDocumentationParser }
-                        dataProvider= { dataProvider(this.state.api) }     
+                        dataProvider={ dataProvider(this.state.api) }     
                         authProvider={ authProvider }
-                        appLayout={MyLayout}
-                        theme={theme}
-                        loginPage={MyLoginPage}
-                               
+                        appLayout={MyLayout}                                 
                     >    
                         <Resource name="users" list={ UserList } create={ UserCreate } show={ UserShow } edit={ UserEdit } title="Users" icon={UserIcon} />
                         <Resource name="employees" list={ EmployeeList } create={ EmployeeCreate } show={ EmployeeShow } edit={ EmployeeEdit } title="Employees" icon={EmployeeIcon}/> 

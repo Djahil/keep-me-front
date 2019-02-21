@@ -1,19 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { MenuItemLink, getResources } from 'react-admin';
+import { MenuItemLink, getResources, Responsive } from 'react-admin';
 import { withRouter } from 'react-router-dom';
 
-const MyMenu = ({ resources, onMenuClick }) => (
+const MyMenu = ({ resources, onMenuClick, logout }) => (
     <div>
         {resources.map(
             resource => (
-                <MenuItemLink 
+                <MenuItemLink   
+                    key={resource.name}
                     to={`/${resource.name}`} 
                     primaryText={resource.name} 
                     onClick={onMenuClick} 
                 />
         ))}
-        <MenuItemLink to="/admin" primaryText="Miscellaneous" onClick={onMenuClick} />
+        {/* <MenuItemLink to="/admin" primaryText="" onClick={onMenuClick} /> */}
+        {/* <Responsive
+        small={logout}
+        medium={null} 
+        /> */}
     </div>
 );
 

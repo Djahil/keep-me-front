@@ -1,13 +1,16 @@
 import React from 'react';
-import { Layout } from 'react-admin';
+import { Layout, Sidebar } from 'react-admin';
 import MyAppBar from '../AppBar/MyAppBar';
 import MyMenu from '../Menu/MyMenu';
 
+const MySidebar = props => <Sidebar {...props} size={200} />;
+
 const MyLayout = (props) => 
-    <Layout 
-        {...props} 
-        appBar={MyAppBar} 
-        menu={ MyMenu }
-    />;
+<Layout 
+    {...props}
+    sidebar={MySidebar} 
+    appBar={MyAppBar} 
+    menu={ MyMenu }
+/>;
 
 export default MyLayout;
