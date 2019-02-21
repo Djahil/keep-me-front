@@ -1,9 +1,10 @@
 import React from 'react';
+import './Employee.scss';
 
-const Employee = () => (
-    <div>
-        <h1>EMPLOYEE</h1>
-    </div>
-);
+const Employee = () => {
+    return (
+        null
+    );
+};
 
 export default Employee;

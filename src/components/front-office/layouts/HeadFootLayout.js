@@ -1,13 +1,23 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 
 import Header from './header/Header'
 import Footer from './footer/Footer'
+// import './HeadFootLayout.scss';
 
-const HeadFootLayout = ({ children }) => (
+const style = {
+    marginTop: '90px',
+    minHeight: '77vh' // chiffre trouvé a la mano comme Papa Truchot !
+};
+
+const HeadFootLayout = ({children}) => (
     <Fragment>
         <Header />
-        { children }
-        <Footer />
+        <div style={style}>
+            {children}
+        </div>
+        <Footer/>
     </Fragment>
 );
-export default HeadFootLayout; 
+export default HeadFootLayout;
+
+

@@ -22,6 +22,9 @@ import EmployeeIcon from '@material-ui/icons/Contacts';
 import './AdminController.scss';
 
 const theme = createMuiTheme({
+    typography: {
+        useNextVariants: true,
+    },
     palette: {
         primary: purple,
         secondary: green,
