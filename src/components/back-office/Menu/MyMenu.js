@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 
 const MyMenu = ({ resources, onMenuClick, logout }) => (
     <div>
-         <MenuItemLink to="/admin" primaryText="Dashboard" onClick={onMenuClick} />
         {resources.map(
             resource => (
                 <MenuItemLink   
@@ -15,8 +14,8 @@ const MyMenu = ({ resources, onMenuClick, logout }) => (
                     onClick={onMenuClick} 
                 />
         ))}
-       
-        <Responsive
+        {/* <MenuItemLink to="/admin" primaryText="" onClick={onMenuClick} /> */}
+        <Respons
         small={logout}
         medium={null} 
         />
