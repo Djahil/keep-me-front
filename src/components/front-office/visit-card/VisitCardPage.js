@@ -32,17 +32,19 @@ class VisitCardPage extends Component {
     }
 
     render () {
-        if (this.state.isCardVisible === true) {
+        const { cardInfos } = this.state
+
+        if (this.state.isCardVisible) {
             return (
                 <div className="visit-card-page">
                     <VisitCard
-                        logo={this.state.cardInfos.logo}
-                        nom={this.state.cardInfos.nom}
-                        prenom={this.state.cardInfos.prenom}
-                        poste={this.state.cardInfos.poste}
-                        mail={this.state.cardInfos.email}
-                        phone={this.state.cardInfos.telephone}
-                        entreprise={this.state.cardInfos.entreprise}
+                        logo={cardInfos.logo}
+                        nom={cardInfos.nom}
+                        prenom={cardInfos.prenom}
+                        poste={cardInfos.poste}
+                        mail={cardInfos.email}
+                        phone={cardInfos.telephone}
+                        entreprise={cardInfos.entreprise}
                     />
                 </div>
             )
@@ -50,7 +52,7 @@ class VisitCardPage extends Component {
         return(
             <div className="visit-card-page">
                 <div className="loadingCard">
-                <Loader type="Circles" color="rgb(0, 101, 107)" height={80} width={80}/>
+                <Loader type="Circles" color="rgb(222, 222, 222)" height={80} width={80}/>
                 </div>
             </div>
         )
