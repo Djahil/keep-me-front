@@ -5,9 +5,6 @@ import mockUser from '../../../assets/data/mockUser';
 import Loader from 'react-loader-spinner';
 import { apiGetCard } from '../../../services/ApiService';
 
-
-const ep = process.env.REACT_APP_API_URL_CARD
-
 class VisitCardPage extends Component {
     state = {
         cardInfos: {},
@@ -17,7 +14,7 @@ class VisitCardPage extends Component {
 
     componentDidMount() {
         const {match: {params} } = this.props
-        apiGetCard(ep, params.slug)
+        apiGetCard(params.slug)
             .then(
                 res => {
                     this.setState({ isCardVisible: true })
@@ -48,26 +45,10 @@ class VisitCardPage extends Component {
                         phone={cardInfos.telephone}
                         entreprise={cardInfos.entreprise}
                     />
-                    {this.state.isMockMessageVisible ? <p>Nous n'avons pas pu récupérer les informations.<br />Cette carte avec un template par défaut s'affiche.</p> : <></>}
+                    {this.state.isMockMessageVisible ? <p>Cette carte est un exemple avec un template par défaut.<br/>Nous n'avons pas pu récupérer les informations que vous recherchez.</p> : <></>}
                 </div>
             )
         }
-        // if (this.state.isCardVisible && this.state.isMockMessageVisible) {
-        //     return (
-        //         <div className="visit-card-page">
-        //             <VisitCard
-        //                 logo={cardInfos.logo}
-        //                 nom={cardInfos.nom}
-        //                 prenom={cardInfos.prenom}
-        //                 poste={cardInfos.poste}
-        //                 mail={cardInfos.email}
-        //                 phone={cardInfos.telephone}
-        //                 entreprise={cardInfos.entreprise}
-        //             />
-        //             <p>MESSAGE</p>
-        //         </div>
-        //     )
-        // }
         return(
             <div className="visit-card-page">
                 <div className="loadingCard">
