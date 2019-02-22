@@ -54,7 +54,6 @@ class Contact extends Component {
                 else{
                     this.setState({msg: "Votre message n'a pa pu être envoyé"});
                     this.setState({status:"success"});
-                    console.log(this.state.status);
                     this.showModal(props)
 
                 }
