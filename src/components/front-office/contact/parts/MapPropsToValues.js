@@ -1,16 +1,16 @@
 /**
  * Created by adminHOC on 19/02/2019.
  */
+import  Faker from 'faker';
 
 
 const MapPropsToValues = ({
-    objet: 'La Vérité des hommes n\'est que mensonges, égoïsme et profit.',
-    prenom: 'menteur',
-    nom: 'sexiste',
-    email: 'stupide@homme.cul',
-    entreprise: 'monde',
-    message: 'Quoi qu\'elle fasse, la femme doit le faire deux fois mieux que l\'homme pour qu\'on en pense autant de bien. Heureusement, ce n\'est pas difficile.',
-
+    objet: Faker.lorem.words(),
+    prenom: Faker.name.firstName(),
+    nom: Faker.name.lastName(),
+    email: Faker.internet.email(),
+    entreprise: Faker.random.word(),
+    message: Faker.lorem.sentences(),
     //
     // objet: '',
     // prenom: '',
