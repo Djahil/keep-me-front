@@ -1,13 +1,10 @@
-import React  from 'react';
-import './Contact.scss';
+import React, { Fragment } from 'react';
+import  FormContact from './parts/FormContact'
 
-const Contact = () => (
-    <div>
-        <h1>CONTACT</h1>
-        <form action="">
-            MON FORMULAIRE ICI
-        </form>
-    </div>
+const ContactPage = () => (
+    <Fragment>
+        <FormContact/>
+    </Fragment>
 );
 
-export default Contact;
+export default ContactPage;
