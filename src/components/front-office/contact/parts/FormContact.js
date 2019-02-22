@@ -5,10 +5,8 @@ import {Formik} from 'formik';
 import MapPropsToValues from './MapPropsToValues'
 import YupValidator from './YupValidator'
 import axios from 'axios';
-import capitalize from '../../../utils/Capitalizer'
-
-const API = "http://localhost:8000/";
-const uriContact = "contact/mail";
+import capitalize from '../../../utils/Capitalizer';
+import  {apiParams} from './apiContact';
 
 class Contact extends Component {
     state = {
@@ -16,11 +14,9 @@ class Contact extends Component {
         msg: 'Error',
         modalheader: '',
         status: 'danger'
-
     };
 
     showModal = (props) => {
-        let user = props;
         this.setState({show: true});
         this.setState({msg: "Merci et à bientot " + capitalize(props.prenom) + " " + capitalize(props.nom)});
         this.setState({modalheader: "Votre message est bien envoyé "});
@@ -31,15 +27,10 @@ class Contact extends Component {
     };
 
     sendMsg = (props) => {
-        axios({
-            method: 'post',
-            url:  API+uriContact,
-            data: JSON.stringify(props)
-        })
+        axios(apiParams)
             .then((res) => {
             console.log(res);
                 if (res.data === this.state.msg ) {
-
                     props.message = "Le serveur a répondu avec une erreur, veuillez vérifier vos informations et réessayer ultérieurement";
                     props.prenom ="";
                     props.email="";
@@ -63,6 +54,8 @@ class Contact extends Component {
             );
     };
 
+
+
     render() {
         return (
             <>
@@ -79,7 +72,6 @@ class Contact extends Component {
                     props => (
                         <Fragment>
                             <h2>{this.state.msg}</h2>
-
                             <Modal show={this.state.show} onHide={this.hideModal} className="info">
                                 <Modal.Header closeButton>
                                     <Modal.Title id="example-modal-sizes-title-sm">
