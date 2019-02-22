@@ -11,7 +11,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 
 const divStyle = {
     bgColor : {
-        backgroundColor: '#3f51b5'             
+        backgroundColor: '#ff6f61'             
     }, 
     width : {
          flex : 1 

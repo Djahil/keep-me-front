@@ -12,11 +12,18 @@ import { EmployeeShow } from './Employees/Show';
 import { EmployeeEdit } from './Employees/Edit'
 import { EmployeeCreate } from './Employees/Create';
 import { EmployeeList } from './Employees/List';
-import UserIcon from '@material-ui/icons/Book';
-import EmployeeIcon from '@material-ui/icons/Group';
+import { createMuiTheme } from '@material-ui/core/styles';
 import Loader from './Loader/Loader';
 import MyLayout from './Layout/MyLayout';
-import Dashboard from './Dashboard/Dashboard';
+
+const myTheme = createMuiTheme({
+    palette: {
+        type:'light',
+        primary : {
+            main: '#000000',
+        }
+    },
+});
 
 const entrypoint = process.env.REACT_APP_API_URL;
 const fetchHeaders = {'Authorization': `Bearer ${window.localStorage.getItem('token')}`};
@@ -63,14 +70,14 @@ export default class extends Component {
         return (
             <React.Fragment>
                     <Admin api={ this.state.api }
-                        dashboard={ Dashboard }
                         apiDocumentationParser={ apiDocumentationParser }
                         dataProvider={ dataProvider(this.state.api) }     
                         authProvider={ authProvider }
-                        appLayout={MyLayout}                                 
+                        appLayout={MyLayout}
+                        theme= {myTheme}                                
                     >    
-                        <Resource name="users" list={ UserList } create={ UserCreate } show={ UserShow } edit={ UserEdit } title="Users" icon={UserIcon} />
-                        <Resource name="employees" list={ EmployeeList } create={ EmployeeCreate } show={ EmployeeShow } edit={ EmployeeEdit } title="Employees" icon={EmployeeIcon}/> 
+                        <Resource name="users" list={ UserList } create={ UserCreate } show={ UserShow } edit={ UserEdit } title="Users" />
+                        <Resource name="employees" list={ EmployeeList } create={ EmployeeCreate } show={ EmployeeShow } edit={ EmployeeEdit } title="Employees" />
                     </Admin>
                     
             </React.Fragment>     

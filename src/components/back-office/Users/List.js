@@ -1,6 +1,6 @@
 import React from 'react';
 import { List, Datagrid, TextField, ShowButton, EditButton, Filter, ReferenceInput, AutocompleteInput, SelectInput, TextInput, Responsive, SimpleList } from 'react-admin';
-// import { CustomPagination } from '../Pagination/CustomPagination';
+import SearchIcon from '@material-ui/icons/Search';
 
 const choices = [
     {
@@ -9,11 +9,11 @@ const choices = [
     }
 ];
 
-const optionRenderer = choice => `${choices.firstName} ${choices.lastName}`;
+ const optionRenderer = () => `${choices.firstName} ${choices.lastName}`;
 
 const UserFilter = (props) => (
-    <Filter {...props}>
-        <TextInput label="Search" source="nom" alwaysOn />
+    <Filter {...props}  icon= {<SearchIcon />}>
+        <TextInput label="Search" source="nom" alwaysOn  />
         <ReferenceInput label="User" source="id" reference="users" allowEmpty>
             {<AutocompleteInput source="users" choices={choices} optionText={optionRenderer} /> }
             <SelectInput choices={choices} optionText={optionRenderer} />
