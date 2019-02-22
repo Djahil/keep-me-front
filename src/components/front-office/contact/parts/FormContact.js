@@ -1,26 +1,67 @@
 import React, {Component, Fragment} from 'react';
-import {Form as Formbs, Button, Jumbotron, Container, Alert, Modal, Row} from "react-bootstrap";
+import {Form as Formbs, Button, Jumbotron, Container, Alert, Modal, Row, Col} from "react-bootstrap";
 
 import {Formik} from 'formik';
 import MapPropsToValues from './MapPropsToValues'
 import YupValidator from './YupValidator'
+import axios from 'axios';
+import capitalize from '../../../utils/Capitalizer'
+
+const API = "http://localhost:8000/";
+const uriContact = "contact/mail";
 
 class Contact extends Component {
     state = {
         show: false,
-        msg: "You have an error in your form",
-        modalheader: ""
+        msg: 'Error',
+        modalheader: '',
+        status: 'danger'
+
     };
 
     showModal = (props) => {
-        this.setState({show: true});
         let user = props;
-        this.setState({msg: "Merci et à bientot " + user.prenom + " " + user.nom});
+        this.setState({show: true});
+        this.setState({msg: "Merci et à bientot " + capitalize(props.prenom) + " " + capitalize(props.nom)});
         this.setState({modalheader: "Votre message est bien envoyé "});
     };
 
     hideModal = () => {
         this.setState({show: false})
+    };
+
+    sendMsg = (props) => {
+        axios({
+            method: 'post',
+            url:  API+uriContact,
+            data: JSON.stringify(props)
+        })
+            .then((res) => {
+            console.log(res);
+                if (res.data === this.state.msg ) {
+
+                    props.message = "Le serveur a répondu avec une erreur, veuillez vérifier vos informations et réessayer ultérieurement";
+                    props.prenom ="";
+                    props.email="";
+                    props.entreprise="";
+                    props.objet="";
+
+                    this.setState({status:"danger"});
+                    this.setState({modalheader: res.data });
+                    this.setState({msg: "Votre message n'a pa pu être envoyé"});
+                    this.showModal(props);
+                }
+                else{
+                    this.setState({msg: "Votre message n'a pa pu être envoyé"});
+                    this.setState({status:"success"});
+                    console.log(this.state.status);
+                    this.showModal(props)
+
+                }
+            })
+            .catch(
+                console.log("dedffqs")
+            );
     };
 
     render() {
@@ -30,15 +71,16 @@ class Contact extends Component {
                 initialValues={MapPropsToValues}
                 validationSchema={YupValidator}
                 onSubmit={(values, {setSubmitting}) => {
-                    console.log(values);
                     setTimeout(() => {
-                        this.showModal(values);
+                        this.sendMsg(values);
                         setSubmitting(false);
-                    }, 300);
+                    });
                 }}
                 render={
                     props => (
                         <Fragment>
+                            <h2>{this.state.msg}</h2>
+
                             <Modal show={this.state.show} onHide={this.hideModal} className="info">
                                 <Modal.Header closeButton>
                                     <Modal.Title id="example-modal-sizes-title-sm">
@@ -47,20 +89,25 @@ class Contact extends Component {
                                 </Modal.Header>
                                 <Modal.Body>
                                     <Container>
-                                        <Alert variant="success">
+                                        <Alert variant={this.state.status}>
                                             {this.state.msg}
                                         </Alert>
                                         <Row>
-                                            {props.values.entreprise}
+                                            <Col xs={12} md={6}>
+                                                {props.values.entreprise}
+                                            </Col>
+                                            <Col xs={12} md={6}>
+                                                {props.values.email}
+                                            </Col>
                                         </Row>
                                         <Row>
-                                            {props.values.email}
+                                            <Col md={12}>
+                                                {(props.values.objet)}
+                                            </Col>
                                         </Row>
                                         <Row>
-                                            {props.values.objet}
-                                        </Row>
-                                        <Row>
-                                            {props.values.message}
+                                            <Col md={12}>
+                                                { (props.values.message)}</Col>
                                         </Row>
                                     </Container>
                                 </Modal.Body>
@@ -159,6 +206,7 @@ class Contact extends Component {
                                             onChange={props.handleChange}
                                             value={props.values.entreprise}
                                             isValid={props.touched.entreprise && !props.errors.entreprise}
+
                                             name="entreprise"
                                         />
                                         {props.errors.entreprise &&
